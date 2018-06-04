@@ -1,0 +1,15 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://admin:123456@${EUREKA_SEVER_HOST}/eureka/
+#      defaultZone: http://localhost:8761/eureka/
+  instance: 
+    preferIpAddress: true
+    instance-id: ${CF_INSTANCE_IP}:${CF_INSTANCE_PORT}
+    ip-address: ${CF_INSTANCE_IP}
+    nonSecurePort: ${CF_INSTANCE_PORT}
+server:
+  port: 8762
+spring:
+  application:
+    name: service-hi
